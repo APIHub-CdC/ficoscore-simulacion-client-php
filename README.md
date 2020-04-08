@@ -1,7 +1,5 @@
-# FicoscoreV2SandboxClient-php
+# ficoscore-simulacion-client-php
 La API de FICO Score determina la probabilidad de incumplimiento de un acreditado en los próximos doce meses. A mayor puntaje de score, menor es el riesgo.
-
-
 
 ## Requisitos
 
@@ -29,7 +27,7 @@ Ejecutar: `composer install`
 
 ### Paso 1. Agregar el producto a la aplicación
 
-Al iniciar sesión seguir os siguientes pasos:
+Al iniciar sesión seguir los siguientes pasos:
 
  1. Dar clic en la sección "**Mis aplicaciones**".
  2. Seleccionar la aplicación.
