@@ -1,6 +1,6 @@
 {
-    "name": "apihub-cdc/ficoscore-v2-sandbox",
-    "description": "",
+    "name": "apihub-cdc/rficoscore-simulacion-client",
+    "description": "Esta API simula las calificaciones de FICO® Score.",
     "keywords": [
         "apihub",
         "php",
@@ -8,6 +8,13 @@
         "api"
     ],
     "homepage": "http://developer.circulodecredito.com.mx",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "APIHub and contributors",
+            "homepage": "https://github.com/APIHub-CdC"
+        }
+    ],
     "require": {
         "php": ">=5.5",
         "ext-curl": "*",
@@ -22,9 +29,9 @@
         "friendsofphp/php-cs-fixer": "~2.12"
     },
     "autoload": {
-        "psr-4": { "FicoscoreV2Sandbox\\Client\\" : "lib/" }
+        "psr-4": { "FS\\Simulacion\\MX\\Client\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "FicoscoreV2Sandbox\\Client\\" : "test/" }
+        "psr-4": { "FS\\Simulacion\\MX\\Client\\" : "test/" }
     }
 }

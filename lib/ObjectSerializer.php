@@ -1,6 +1,6 @@
 <?php
 
-namespace FicoscoreV2Sandbox\Client;
+namespace FS\Simulacion\MX\Client;
 
 class ObjectSerializer
 {
@@ -165,7 +165,7 @@ class ObjectSerializer
         } else {
             $discriminator = $class::DISCRIMINATOR;
             if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
-                $subclass = '\FicoscoreV2Sandbox\Client\Model\\' . $data->{$discriminator};
+                $subclass = '\FS\Simulacion\MX\Client\Model\\' . $data->{$discriminator};
                 if (is_subclass_of($subclass, $class)) {
                     $class = $subclass;
                 }

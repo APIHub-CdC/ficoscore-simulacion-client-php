@@ -1,9 +1,9 @@
 <?php
 
-namespace FicoscoreV2Sandbox\Client\Model;
+namespace FS\Simulacion\MX\Client\Model;
 
 use \ArrayAccess;
-use \FicoscoreV2Sandbox\Client\ObjectSerializer;
+use \FS\Simulacion\MX\Client\ObjectSerializer;
 
 class Domicilio implements ModelInterface, ArrayAccess
 {
@@ -16,12 +16,12 @@ class Domicilio implements ModelInterface, ArrayAccess
         'colonia_poblacion' => 'string',
         'delegacion_municipio' => 'string',
         'ciudad' => 'string',
-        'estado' => '\FicoscoreV2Sandbox\Client\Model\CatalogoEstados',
+        'estado' => '\FS\Simulacion\MX\Client\Model\CatalogoEstados',
         'cp' => 'string',
         'fecha_residencia' => 'string',
         'numero_telefono' => 'string',
-        'tipo_domicilio' => '\FicoscoreV2Sandbox\Client\Model\CatalogoTipoDomicilio',
-        'tipo_asentamiento' => '\FicoscoreV2Sandbox\Client\Model\CatalogoTipoAsentamiento',
+        'tipo_domicilio' => '\FS\Simulacion\MX\Client\Model\CatalogoTipoDomicilio',
+        'tipo_asentamiento' => '\FS\Simulacion\MX\Client\Model\CatalogoTipoAsentamiento',
         'fecha_registro_domicilio' => 'string',
         'tipo_alta_domicilio' => 'int',
         'id_domicilio' => 'string'
