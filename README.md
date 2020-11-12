@@ -1,5 +1,5 @@
 # ficoscore-simulacion-client-php
-La API de FICO Score determina la probabilidad de incumplimiento de un acreditado en los próximos doce meses. A mayor puntaje de score, menor es el riesgo.
+La API de FICO Score determina la probabilidad de incumplimiento de un acreditado en los próximos doce meses. A mayor puntaje de score, menor es el riesgo. <br/><img src='https://github.com/APIHub-CdC/imagenes-cdc/blob/master/circulo_de_credito-apihub.png' height='37' width='160'/><br/>
 
 ## Requisitos
 
@@ -43,7 +43,7 @@ Al iniciar sesión seguir los siguientes pasos:
 
 ### Paso 2. Capturar los datos de la petición
 
-Los siguientes datos a modificar se encuentran en ***test/Api/FICOScoreApiTest.php***
+Los siguientes datos a modificar se encuentran en ***test/Api/ApiTest.php***
 
 Es importante contar con el setUp() que se encargará de inicializar la url. Modificar la URL ***('the_url')*** de la petición del objeto ***$config***, como se muestra en el siguiente fragmento de código:
 
@@ -51,56 +51,51 @@ Es importante contar con el setUp() que se encargará de inicializar la url. Mod
 <?php
 public function setUp()
 {
-     $handler = \GuzzleHttp\HandlerStack::create();
-        $config = new \FicoscoreV2Sandbox\Client\Configuration();
-        $config->setHost('the_url');
-
-        $client = new \GuzzleHttp\Client(['handler' => $handler, 'verify' => false]);
-        $this->apiInstance = new \FicoscoreV2Sandbox\Client\Api\FICOScoreApi($client,$config);
-}    
+    $config = new Configuration();
+    $config->setHost('the_url');
+    $client = new Client();
+    $this->apiInstance = new Instance($client, $config);
+    $this->x_api_key = "your_x_api_key";
+}  
 ```
 ```php
 
 <?php
 /**
-* Este es el método que se será ejecutado en la prueba ubicado en path/to/repository/test/Api/FICOScoreApiTest.php
+* Este es el método que se será ejecutado en la prueba ubicado en path/to/repository/test/Api/ApiTest.php
 */
 public function testGetReporte()
-    {
-        $x_api_key = "XXXXX";
+{
+    $request = new Peticion();
+    $persona = new Persona();
+    $domicilio = new Domicilio();
 
-        $request = new \FicoscoreV2Sandbox\Client\Model\Peticion();
-        
-        
+    $request->setFolio("123456");
+    
+    $persona->setNombres("JUAN");
+    $persona->setApellidoPaterno("SESENTAYDOS");
+    $persona->setApellidoMaterno("PRUEBA");
+    $persona->setFechaNacimiento("1965-08-09");
+    $persona->setRFC("SEPJ650809JG1");
 
-        $request->setFolio("XXXXX");
+    $domicilio->setDireccion("PASADISO ENCONTRADO 58");
+    $domicilio->setColoniaPoblacion("MONTEVIDEO");
+    $domicilio->setCiudad("CIUDAD DE MÉXICO");
+    $domicilio->setCP("07730");
+    $domicilio->setDelegacionMunicipio("GUSTAVO A MADERO");
+    $domicilio->setEstado("CDMX");
 
-        $persona = new \FicoscoreV2Sandbox\Client\Model\Persona();
-        $persona->setNombres("XXXXX");
-        $persona->setApellidoPaterno("XXXX");
-        $persona->setApellidoMaterno("XXXXX");
-        $persona->setFechaNacimiento("DD-MM-YYYY");
-        $persona->setRFC("XXXXXXXXXX");
+    $persona->setDomicilio($domicilio);
 
-        $domicilio = new \FicoscoreV2Sandbox\Client\Model\Domicilio();
-        $domicilio->setDireccion("XXXXXXXXXX");
-        $domicilio->setColoniaPoblacion("XXXXXXX");
-        $domicilio->setCiudad("XXXXXXX");
-        $domicilio->setCP("XXXXX");
-        $domicilio->setDelegacionMunicipio("XXXXXXXXX");
-        $domicilio->setEstado("CDMX");
+    $request->setPersona($persona);
 
-        $persona->setDomicilio($domicilio);
-
-        $request->setPersona($persona);
-
-        try {
-            $result = $this->apiInstance->getReporte($x_api_key, $request);
-            print_r($result);
-        } catch (Exception $e) {
-            echo 'Exception when calling ApiTest->getReporte: ', $e->getMessage(), PHP_EOL;
-        }
+    try {
+        $result = $this->apiInstance->getReporte($this->x_api_key, $request);
+        print_r($result);
+    } catch (Exception $e) {
+        echo 'Exception when calling ApiTest->testGetReporte: ', $e->getMessage(), PHP_EOL;
     }
+}
 ?>
 ```
 ## Pruebas unitarias
@@ -110,5 +105,8 @@ Para ejecutar las pruebas unitarias:
 ```sh
 ./vendor/bin/phpunit
 ```
+
+---
+[CONDICIONES DE USO, REPRODUCCIÓN Y DISTRIBUCIÓN](https://github.com/APIHub-CdC/licencias-cdc)
 
 [1]: https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos

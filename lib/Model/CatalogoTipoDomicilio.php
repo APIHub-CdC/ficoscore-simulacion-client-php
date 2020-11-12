@@ -1,7 +1,7 @@
 <?php
 
-namespace FicoscoreV2Sandbox\Client\Model;
-use \FicoscoreV2Sandbox\Client\ObjectSerializer;
+namespace FS\Simulacion\MX\Client\Model;
+use \FS\Simulacion\MX\Client\ObjectSerializer;
 
 class CatalogoTipoDomicilio
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace FicoscoreV2Sandbox\Client\Model;
+namespace FS\Simulacion\MX\Client\Model;
 
 use \ArrayAccess;
-use \FicoscoreV2Sandbox\Client\ObjectSerializer;
+use \FS\Simulacion\MX\Client\ObjectSerializer;
 
 class Errores implements ModelInterface, ArrayAccess
 {
@@ -12,7 +12,7 @@ class Errores implements ModelInterface, ArrayAccess
     protected static $apihubModelName = 'Errores';
     
     protected static $apihubTypes = [
-        'errores' => '\FicoscoreV2Sandbox\Client\Model\Error[]'
+        'errores' => '\FS\Simulacion\MX\Client\Model\Error[]'
     ];
     
     protected static $apihubFormats = [
