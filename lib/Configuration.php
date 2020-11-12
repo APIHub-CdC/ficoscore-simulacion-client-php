@@ -1,6 +1,6 @@
 <?php
 
-namespace FicoscoreV2Sandbox\Client;
+namespace FS\Simulacion\MX\Client;
 
 class Configuration
 {
@@ -18,7 +18,7 @@ class Configuration
     
     protected $host = '';
     
-    protected $userAgent = 'FicoscoreV2Sandbox-Codegen/1.0.0/php';
+    protected $userAgent = 'FS\Simulacion\MX-Codegen/1.0.0/php';
     
     protected $debug = false;
     
@@ -159,7 +159,7 @@ class Configuration
     
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (FicoscoreV2Sandbox\Client) Debug Report:' . PHP_EOL;
+        $report  = 'PHP SDK (FS\Simulacion\MX\Client) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 2.0.0' . PHP_EOL;

@@ -1,9 +1,9 @@
 <?php
 
-namespace FicoscoreV2Sandbox\Client\Model;
+namespace FS\Simulacion\MX\Client\Model;
 
 use \ArrayAccess;
-use \FicoscoreV2Sandbox\Client\ObjectSerializer;
+use \FS\Simulacion\MX\Client\ObjectSerializer;
 
 class Score implements ModelInterface, ArrayAccess
 {
@@ -14,7 +14,7 @@ class Score implements ModelInterface, ArrayAccess
     protected static $apihubTypes = [
         'nombre_score' => 'string',
         'valor' => 'int',
-        'razones' => '\FicoscoreV2Sandbox\Client\Model\CatalogoRazones[]'
+        'razones' => '\FS\Simulacion\MX\Client\Model\CatalogoRazones[]'
     ];
     
     protected static $apihubFormats = [
