@@ -1,5 +1,5 @@
 {
-    "name": "apihub-cdc/rficoscore-simulacion-client",
+    "name": "apihub-cdc/ficoscore-simulacion-client",
     "description": "Esta API simula las calificaciones de FICO® Score.",
     "keywords": [
         "apihub",
